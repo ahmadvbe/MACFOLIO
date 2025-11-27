@@ -30,7 +30,10 @@ const renderText = (text, className, baseweight = 400) => {
 
 //41:46 animate the text
 const setupTextHover = (container, type) => {   
-    if(!container) return //exit the function if the container does not exist
+    if(!container) return () =>{}//exit the function if the container does not exist 
+    // 57:45 coderabbit fix else undefined
+
+
     //else get access to letters within the containers 
         const letters = container.querySelectorAll('span') //we ll target it by the span element
         //each span is a character 42:25
@@ -128,14 +131,14 @@ const Welcome = () => {
         <h1 ref={titleRef} className="mt-7">
             {renderText(
                 "MacFolio", //text
-                'text-9xl italic sfont-georama', //className
+                'text-9xl italic font-georama', //className
                 400 //baseweight by default is set to 400
             )}
         </h1>   
         <div //in case we re dealing wid a small screen
             className="small-screen">
             <p>
-                This portfolio is designed for DESKTOP/TABLET screen only.
+                This portfolio is designed for DESKTOP/TABLET screens only.
             </p>
 
         </div>
