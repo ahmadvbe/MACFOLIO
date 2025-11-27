@@ -53,7 +53,7 @@ const setupTextHover = (container, type) => {
             })
         }
         //now we have to caklk the animateLtter function when we hover over each letter 44:54
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e) => { //recap at 1:08:26
             //get access to the left portion of the container 45:14
             const {left} = container.getBoundingClientRect()
             //get access to the mouse position
@@ -67,7 +67,7 @@ const setupTextHover = (container, type) => {
                 const distance = Math.abs(mouseX - (l -left + w/2)) //distance between the mouse and the center of the letter
                 
                 //46:18 get the intensity of the effect based on the distance
-                const intensity = Math.exp(-(distance ** 2) /20000)
+                const intensity = Math.exp(-(distance ** 2.5) /20000)
 
                 animateLetter(letter, min + (max - min) * intensity) //animate the letter based on the intensity
 
@@ -79,6 +79,7 @@ const setupTextHover = (container, type) => {
             letters.forEach((letter) => {
                 animateLetter(letter, base, 0.3) //animate each letter back to its base weight over 0.3 seconds
             })}
+
 
             
         //now we have to actullay call the handleMouseMove function 47:50
