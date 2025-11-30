@@ -38,13 +38,13 @@ const navIcons = [
 const dockApps = [
   {
     id: "finder",
-    name: "Portfolio", // was "Finder"
+    name: "Finder", // was "Finder" name: "Portfolio"
     icon: "finder.png",
     canOpen: true,
   },
   {
     id: "safari",
-    name: "Articles", // was "Safari"
+    name: "Safari", // was "Safari"  name: "Articles"
     icon: "safari.png",
     canOpen: true,
   },
@@ -492,7 +492,10 @@ export const locations = {
 
 const INITIAL_Z_INDEX = 1000;
 
-const WINDOW_CONFIG = {
+const WINDOW_CONFIG = { //1:18:40 OBJECT CONTAINING ALL THE INDOWS NAMES THAT WELL HVE WITHIN OUR APP
+  //AND WE RE SETTING THE Z INDEX TO 1000 SO WE CAN LATER INCREASE IT OR 
+  // DECREASE IT DEPENDING ON WHICH WINDOWS WE RE CLICKING ON
+  //THEY ALL START as close with null data
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },

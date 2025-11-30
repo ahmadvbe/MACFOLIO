@@ -3,12 +3,17 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import React, { useRef } from "react";
 import { Tooltip } from "react-tooltip";
+import useWindowStore from "#store/window.js";
 
 const Dock = () => {
+
+    //1:24:42 use of our store create windows.js portfolio/src/store/window.js
+    const { openWindow, closeWindow, focusWindow, windows,nextZIndex } = useWindowStore()
+
     //1:01:04 define a new ref by using useRef hook
     const dockRef = useRef(null);
 
-    //1:06:49 animate it using GSAP - useGSAP hook
+    //1:06:49 animate it using GSAP - useGSAP hooks
     useGSAP(() => {
         const dock=dockRef.current;
         if (!dock) return;
@@ -80,9 +85,32 @@ const Dock = () => {
 
 }, [])
 
-    const toggleApp = (name) => {
+    const toggleApp = (app) => {
         //1:13:19 what happens on click on the dock items
         //implement the open window logic 1:13:31
+        //back to dock.js to use that store created 1:24:42
+        //that we go to the toggleApp function 1:25:05
+        if(!app.canOpen) return 
+        //else get access to the current window that user is trying to oopen 
+        // console.log(nextZIndex)
+        // console.log(windows); // Log the entire object
+        // console.log(app.id); // Log the app ID being passed
+        
+        const appWindow = windows[app.id]
+
+        if(!appWindow){ //new check added by code rabbit cli 1:29:20
+            console.error(`window not found for app ${app.id}`)
+            return
+        }
+
+        if(appWindow?.isOpen){
+            closeWindow(app.id)
+        }else{
+            openWindow(app.id)
+        }
+
+        // console.log(windows)
+
 
     }
 
