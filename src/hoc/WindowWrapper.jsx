@@ -36,7 +36,7 @@ const WindowWrapper = (Component, windowKey) => {
        
         //1:33:57 get the window that we re currently openeing 
         const {isOpen, zIndex} = windows[windowKey] //returning the data for that specific window
-        
+
         //1:34:28 create a new ref to be used to manage the animations
         const ref = useRef(null)
 
