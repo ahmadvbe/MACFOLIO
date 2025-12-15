@@ -1,7 +1,7 @@
 
 import React from 'react'
-import { Dock, Navbar, Welcome } from '#components'
-import {Safari, Terminal, Resume, Finder, Text, Image, Contact} from '#windows'
+import { Dock, Navbar, Welcome, Home } from '#components'
+import {Safari, Terminal, Resume, Finder, Text, Image, Contact, Photos} from '#windows'
 
 //1:32:50 FOR OUR WINDOWS TO BE DRAGGABLE => we have to use a GSAP draggable plugin
 import gsap from "gsap"
@@ -33,6 +33,13 @@ const App = () => {
 
        {/* 2:46:05 */}
        <Contact />
+
+        {/* 3:01:05 */} 
+       <Photos /> 
+
+       {/* 2:54:15 */}
+       <Home 
+         />
 
     </main>
   )
